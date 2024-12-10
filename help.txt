@@ -1,0 +1,116 @@
+Usage: usage: [optional_command_string] [options]
+supported options are:
+B1pm1 <value>               : (Integer < 64-bit): B1 bound of P-1 algorithm
+B1pp1 <value>               : (Integer < 64-bit): B1 bound of P+1 algorithm
+B1ecm <value>               : (Integer < 64-bit): B1 bound of ECM algorithm
+rhomax <value>              : (Integer < 32-bit): Iteration limit of Rho algorithm
+B2pm1 <value>               : (Integer < 64-bit): B2 bound of P-1 algorithm
+B2pp1 <value>               : (Integer < 64-bit): B2 bound of P+1 algorithm
+B2ecm <value>               : (Integer < 64-bit): B2 bound of ECM algorithm
+qssave <value>              : (String)          : name of SIQS save file
+siqsB <value>               : (Integer < 32-bit): Size of SIQS factor base (number of primes)
+siqsTF <value>              : (Integer < 32-bit): SIQS trial factoring bound
+siqsR <value>               : (Integer < 32-bit): SIQS Number of relations to gather
+siqsT <value>               : (Integer < 32-bit): SIQS timeout in seconds
+siqsNB <value>              : (Integer < 32-bit): SIQS Number of sieve blocks
+siqsM <value>               : (Integer < 32-bit): SIQS Large prime variation multiplier
+logfile <value>             : (String)          : Name of factoring logfile
+batchfile <value>           : (String)          : Name of input batchfile
+seed <value>                : (Integer < 64-bit): Seed for RNG
+sigma <value>               : (Integer < 64-bit): ECM sigma
+session <value>             : (String)          : Name of session logfile
+threads <value>             : (Integer < 32-bit): Number of threads
+v                           :                   : Increase verbosity
+silent                      :                   : Set verbosity to -1 (no output)
+pfile                       :                   : Output primes to file primes.dat
+pscreen                     :                   : Output primes to screen
+forceDLP                    :                   : Force use of DLP variation in SIQS
+fmtmax <value>              : (Integer < 32-bit): Max iteration for Fermat factorization method
+noopt                       :                   : Do not optimize small prime variation cutoff in SIQS
+vproc                       :                   : Verbose output of processor info
+noecm                       :                   : Do not use ECM in factor()
+ggnfs_dir <value>           : (String)          : Directory containing ggnfs executables
+tune_info <value>           : (String)          : Input tuning information for SIQS/NFS crossover
+pretest_ratio <value>       : (Floating point)  : ECM/NFS pretesting ratio: projected-difficulty * ratio = ECM depth
+xover <value>               : (Floating point)  : SIQS/NFS crossover point (decimal digits)
+one                         :                   : Stop after one factor found
+op <value>                  : (String)          : Filename where primes found during factor() are output
+of <value>                  : (String)          : Filename where factors found during factor() are output
+ou <value>                  : (String)          : Filename where unfactored residues remaining after factor() are output
+plan <value>                : (String)          : ECM pretesting plan (light = 2/9, deep = 1/3, normal = 4/13, none, or custom (pretest_ratio)
+pretest <value>             : (Integer < 32-bit): Only ECM pretest (no NFS or SIQS) to specified digit level
+no_expr                     :                   : For use with op, of, or ou, to output expressions
+o <value>                   : (String)          : NFS output filename
+a                           :                   : Algebraic side GGNFS sieving
+r                           :                   : Rational side GGNFS sieving
+ggnfsT <value>              : (Integer < 32-bit): NFS sieving timeout in seconds
+job <value>                 : (String)          : NFS input jobfile name
+ns <value>                  : (Start,Stop)      : Perform only sieving phase of NFS within specified 32-bit start,stop lattice Q's
+np <value>                  : (Start,Stop)      : Perform only poly-search phase of NFS within specified 32-bit start,stop leading coefficients
+nc                          :                   : Perform only post-processing phase of NFS, starting with filtering
+psearch <value>             : (String)          : NFS poly-search methology ('deep', 'wide', 'fast', 'min', 'avg', or 'good')
+R                           :                   : Resume NFS with an existing data/job file
+pbatch <value>              : (Integer < 32-bit): Range of leading coefficients to distribute to threads during NFS poly-search
+ecm_path <value>            : (String)          : Path of GMP-ECM executable
+siever <value>              : (Integer < 32-bit): Version of GGNFS to use (11,12,13,14,15,16)
+ncr                         :                   : Restart LA phase of NFS from an existing checkpoint
+lathreads <value>           : (Integer < 32-bit): Number of threads to use in LA (if different from -threads)
+nc2                         :                   : Perform only LA phase of NFS
+nc3                         :                   : Perform only SQRT post-processing phase of NFS
+p                           :                   : Set yafu to idle priority
+work <value>                : (Floating point)  : Input work level (prior ECM work to specified number of digits)
+nprp <value>                : (Integer < 32-bit): Number of witnesses to use in Miller-Rabin PRP tests
+ext_ecm <value>             : (Integer < 64-bit): B1 bound crossover point for switching to external ECM executable
+testsieve <value>           : (Integer < 32-bit): Difficulty level above which SNFS testsieving is automatically performed to select best poly
+nt <value>                  : (String)          : Comma-delimited list of job files to GNFS test sieve
+aprcl_p <value>             : (Integer < 32-bit): setting the threshold below which numbers are proved prime using APR-CL
+aprcl_d <value>             : (Integer < 32-bit): setting the threshold above which numbers that are proved prime using APR-CL have additional verbosity
+filt_bump <value>           : (Floating point)  : If NFS filtering fails to produce a matrix, increment relations by specified percentage
+nc1                         :                   : Perform only filtering phase of NFS
+gnfs                        :                   : Force GNFS instead of SNFS
+e <value>                   : (String)          : Supplies expression to execution
+repeat <value>              : (Integer < 32-bit): Repeat input command line specified number of times
+ecmtime <value>             : (Integer < 32-bit): Not currently implemented
+no_clk_test                 :                   : Do not test clock speed when yafu initializes
+siqsTFSm <value>            : (Integer < 32-bit): SIQS small prime variation trial factoring bound
+script <value>              : (String)          : Filename of script to execute
+degree <value>              : (Integer < 32-bit): Not currently implemented
+snfs_xover <value>          : (Floating point)  : QS/SNFS crossover
+soe_block <value>           : (Integer < 32-bit): Sieve of Eratosthenes block size in bytes
+forceTLP                    :                   : Force use of TLP variation in SIQS
+siqsLPB <value>             : (Integer < 32-bit): SIQS large prime bound, in bits (2^bits)
+siqsMFBD <value>            : (Floating point)  : Exponent of SIQS DLP: attempt to split residues up to LPB^exponent
+siqsMFBT <value>            : (Floating point)  : Exponent of SIQS TLP: attempt to split residues up to LPB^exponent
+siqsBDiv <value>            : (Floating point)  : SIQS Batch Divisor: specifies max prime to include in batch GCD as divisor of max factorbase prime
+siqsBT <value>              : (Integer < 32-bit): SIQS Batch Target: how many residues to batch before doing batch GCD
+prefer_gmpecm               :                   : Uses external GMP-ECM instead of internal AVX-ECM
+saveB1                      :                   : Create savefile with B1 residues in AVX-ECM
+siqsNobat                   :                   : Do not use SIQS Batch GCD
+inmem <value>               : (Integer < 32-bit): Digit level below which SIQS in-memory is used (no savefile)
+prefer_gmpecm_stg2          :                   : Use GMP-ECM for stage 2
+vpp1_work_file <value>      : (String)          : Filename for vecP+1 work input
+vpm1_work_file <value>      : (String)          : Filename for vecP-1 work input
+resume <value>              : (String)          : Filename to resume parallel P+1 or P-1
+jsonpretty                  :                   : Output JSON info pretty printed (one pair per line)
+cadoMsieve                  :                   : cadoMsieve
+cado_dir <value>            :                   : cado_dir
+convert_poly_path <value>   :                   : convert_poly_path
+gpucurves <value>           : (Integer < 32-bit): Number of gpu curves to run in a batch
+cgbn                        :                   : use cgbn with gpu-ecm (external ecm binary enabled with this option must exist)
+use_gpuecm                  :                   : use gpu-ecm (external ecm binary enabled with this option must exist)
+use_gpudev <value>          : (Integer < 32-bit): gpu device number
+prefer_avxecm_stg2          :                   : use AVX-ECM for stage 2
+stoplt <value>              : (Integer < 32-bit): stop if a factor is found of less than <n> digits
+stople <value>              : (Integer < 32-bit): stop if a factor is found of less than or equal to <n> digits
+stopeq <value>              : (Integer < 32-bit): stop if a factor is found of equal to <n> digits
+stopgt <value>              : (Integer < 32-bit): stop if a factor is found of greater than <n> digits
+stopge <value>              : (Integer < 32-bit): stop if a factor is found of greater than or equal to <n> digits
+stopbase <value>            : (Integer < 32-bit): Base to use for stopXY options(default 10, range: 2 <= b <= 62)
+stopprime                   :                   : Use for stopXY options to add constraint that number is prime
+siqsSSidx <value>           : (Integer < 32-bit): Factor base index at which to start using subset sum algorithm (default 0: unused)
+siqsSSalloc <value>         : (Integer < 32-bit): Size of a poly-bucket, in bits.  Smaller is better as long as it's big enough. 12 is default.
+skipSNFScheck               :                   : Set this to skip all checks for the existance of SNFS polynomials for the input
+obase <value>               : (Integer==8,10,16): Output base in octal (8), decimal (default, 10), or hexadecimal (16)
+minrels <value>             : (Integer < 32-bit): Minimum relations to find in NFS before trying to filter
+stopk <value>               : (Integer < 32-bit): Stop factor() after finding k factors
+stop_strict                 :                   : Stop factor() after finding k factors, including small primes (trialdiv/rho)
