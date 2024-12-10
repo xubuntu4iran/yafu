@@ -22,7 +22,7 @@
 
 # linux
 CFLAGS=-Wall -Wno-unused-variable -Wno-unused-function -Ofast -fomit-frame-pointer -march=native -funroll-loops  \
-	-I../../../gmp_install/gmp-6.2.0/include -I../../include -fcommon
+	-I../../../gmp-install/6.2.1/include -I../../include -fcommon
 
 #clang
 #CFLAGS= -Wall -Wno-unused-variable -Wno-unused-function -Ofast -march=native -I/Users/searle/progs/ensc-dependencies/include
@@ -32,7 +32,7 @@ CFLAGS=-Wall -Wno-unused-variable -Wno-unused-function -Ofast -fomit-frame-point
 #endif
 
 
-GMP_LIB=-L../../../gmp_install/gmp-6.2.0/include/lib -lgmp
+GMP_LIB=-L../../../gmp-install/6.2.1/include/lib -lgmp
 #For windows
 #GMP_LIB=-Lc:/Users/steve/progs/local/lib -lgmp -lws2_32
 #Using brew installed gmp
